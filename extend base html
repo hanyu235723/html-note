@@ -1,0 +1,26 @@
+{% load cms_tags menu_tags sekizai_tags cache i18n %}
+{% load static from staticfiles %}
+<head>
+    <meta charset="utf-8">
+
+    {% block head %}{% endblock head %}
+    <title>
+    <script type="text/javascript"
+        src="{% static 'project/external/jquery-1.11.2.min.js' %}"></script>
+
+    {% render_block "css" %}
+    {% render_block "js" %}
+
+    {% block styles %}{% endblock styles %}
+    {% block scripts %}{% endblock scripts %}
+
+</head>
+<body>
+    {% cms_toolbar %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer-scripts %}{% endblock footer-scripts %}
+</body>
+</html>
